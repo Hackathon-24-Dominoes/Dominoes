@@ -7,32 +7,43 @@ const client = new Anthropic({
   dangerouslyAllowBrowser: true,
 });
 
-const modifiers = [
-  "Global Diplomacy Prevention",
-  "Quantum Probability Meditation",
-  "Squirrel Communication Training",
-  "Apocalypse Preparedness Drill",
-  "Reverse Psychology Therapy",
-  "Supernatural Summoning Technique",
-  "Your Dad thighs",
-  "Interpretive Dance Choreography Inspiration",
-  "Computational Chaos Theory Experiment",
-  "Alien First Contact Protocol",
-  "Retirement Planning through Randomness",
-  "Quantum Entanglement Visualization",
-  "Time Travel Rehearsal",
-  "Your Mom",
-  "Gangster rapper",
-  "Dog ate my homework",
-];
+function choose(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function generateStoryPrompt() {
+  const themes = [
+    "Global Diplomacy Prevention",
+    "Quantum Probability Meditation",
+    "Squirrel Communication Training",
+    "Apocalypse Preparedness Drill",
+    "Reverse Psychology Therapy",
+    "Supernatural Summoning Technique",
+    "Interpretive Dance Choreography Inspiration",
+    "Computational Chaos Theory Experiment",
+    "Alien First Contact Protocol",
+    "Retirement Planning through Randomness",
+    "Quantum Entanglement Visualization",
+    "Your Dad thighs",
+    "Time Travel Rehearsal",
+    "Your Mom",
+    "Gangster rapper",
+    "Dog ate my homework",
+    "Raccoon overlords",
+  ];
+  const subjects = ["The world", "Your family", "Yourself"];
+  return `Ludicrous reason that I should play dominoes involving ${choose(
+    themes
+  )} with subject ${choose(
+    subjects
+  )}.3 sentences maximum and in an story format.`;
+}
 
 function App() {
   const [inputValue, setInputValue] = useState("");
   const [msg, setMsg] = useState("");
 
   async function getGreetingStory() {
-    const modifier = modifiers[Math.floor(Math.random() * modifiers.length)];
-    console.log(modifier);
     const message = await client.messages.create({
       model: "claude-3-5-sonnet-20241022",
       max_tokens: 1000,
@@ -43,7 +54,7 @@ function App() {
           content: [
             {
               type: "text",
-              text: `Ludicrous reason to play dominoes involving ${modifier}. 3 sentences maximum and in an story format.`,
+              text: generateStoryPrompt(),
             },
           ],
         },
