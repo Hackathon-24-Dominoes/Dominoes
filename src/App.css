@@ -19,6 +19,7 @@
 }
 
 /* ---------------------- Modal Styling ----------------------  */
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -32,13 +33,21 @@
 }
 
 .modal {
-  background: blue;
+  background: white;
+  color: black;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
-  width: 300px;
+  width: 80%;
   max-width: 90%;
+  font-size: 1.5em;
+}
+
+.center_story{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .close-button {
@@ -49,6 +58,8 @@
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
+  color: black;
+
 }
 
 @keyframes logo-spin {
