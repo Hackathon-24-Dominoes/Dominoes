@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Anthropic from "@anthropic-ai/sdk";
 import Modal from "./Components/modal";
+import React from 'react';
+import Game from "./Components/Game";
 
 const client = new Anthropic({
   apiKey: import.meta.env.VITE_API_KEY,
@@ -71,6 +73,7 @@ function App() {
 
   return (
     <>
+    <Game></Game>
       <Modal isOpen={isModalOpen} onClose={closeModal} msg={msg} getGreetingStory={getGreetingStory} >
       </Modal>
     </>

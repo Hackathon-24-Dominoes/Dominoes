@@ -22,6 +22,9 @@ function Modal({ isOpen, onClose, msg, getGreetingStory }) {
             }
 
         </div>
+        <button className="close-button" onClick={onClose}>
+                X
+          </button>
       </div>
     );
 }
