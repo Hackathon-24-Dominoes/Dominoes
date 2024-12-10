@@ -22,7 +22,6 @@ const Player = ({ playerNumber, playerDominoes, currentPlayer, placeDomino }) =>
 
 const DominoWrapper = styled.div`
     display: flex;
-    // gap: 5px;
 `;
 
 export default Player;
