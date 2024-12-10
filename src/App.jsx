@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Anthropic from '@anthropic-ai/sdk';
-
+import Modal from './Components/modal';
 const client = new Anthropic({
     apiKey: import.meta.env.VITE_API_KEY,
     dangerouslyAllowBrowser: true,
@@ -12,6 +12,9 @@ function App() {
   const [inputValue, setInputValue] = useState('');
   const [msg, setMsg] = useState('');
 
+  const [isModalOpen, setModalOpen] = useState(true);
+  // const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
 
   async function getClaudeResponse(event){
     event.preventDefault();
@@ -47,6 +50,10 @@ function App() {
         <button type="submit">Submit</button>
       </form>
       {msg.length > 0 ?  <p>{msg}</p> : <p>nothing sof</p>}
+      <Modal  isOpen={isModalOpen} onClose={closeModal}>
+        <h2>Modal Content</h2>
+        <p>This is an example of a modal in React.</p>
+      </Modal>
     </>
   )
 }
