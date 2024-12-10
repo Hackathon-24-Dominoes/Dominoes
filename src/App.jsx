@@ -43,6 +43,12 @@ function App() {
   const [inputValue, setInputValue] = useState("");
   const [msg, setMsg] = useState("");
 
+  const [isModalOpen, setModalOpen] = useState(true);
+  // const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+  const [inputValue, setInputValue] = useState("");
+  const [msg, setMsg] = useState("");
+
   async function getGreetingStory() {
     const message = await client.messages.create({
       model: "claude-3-5-sonnet-20241022",
@@ -100,6 +106,11 @@ function App() {
         />
         <button type="submit">Submit</button>
       </form>
+      {msg.length > 0 ? <p>{msg}</p> : <p>nothing sof</p>}
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <h2>Modal Content</h2>
+        <p>This is an example of a modal in React.</p>
+      </Modal>
       {msg.length > 0 ? <p>{msg}</p> : <p>nothing sof</p>}
     </>
   );
