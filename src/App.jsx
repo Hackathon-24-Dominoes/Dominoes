@@ -1,33 +1,52 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Anthropic from '@anthropic-ai/sdk';
+
+const client = new Anthropic({
+    apiKey: import.meta.env.VITE_API_KEY,
+    dangerouslyAllowBrowser: true,
+  });
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [inputValue, setInputValue] = useState('');
+  const [msg, setMsg] = useState('');
+
+
+  async function getClaudeResponse(event){
+    event.preventDefault();
+    const message = await client.messages.create({
+      model: "claude-3-5-sonnet-20241022",
+      max_tokens: 1000,
+      temperature: 0,
+      messages: [
+          {
+          "role": "user",
+          "content": [
+              {
+              "type": "text",
+              "text": inputValue
+              }
+          ]
+          }
+      ]
+      });
+    setMsg(message.content[0].text)
+    console.log(message.content[0].text);
+}
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <form onSubmit={getClaudeResponse}>
+        <input
+          type="text"
+          placeholder="Type something"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)} // Update state with input value
+        />
+        <button type="submit">Submit</button>
+      </form>
+      {msg.length > 0 ?  <p>{msg}</p> : <p>nothing sof</p>}
     </>
   )
 }
