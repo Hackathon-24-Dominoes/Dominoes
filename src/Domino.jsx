@@ -1,35 +1,35 @@
 import styled from "styled-components";
 
 const Domino = ({ domino }) => {
-  function renderDots(count) {
+  function renderDots(count, reverse = false) {
     const elements = [];
     for (let i = 0; i < 9; i++) {
       elements.push(
         <Dot key={i} isVisible={i < count} />
       );
     }
-    return elements;
-  }
+    return reverse ? elements.reverse() : elements;
+  };
 
   return (
     <Container>
       <Top>{renderDots(domino[0])}</Top>
-      <Bottom>{renderDots(domino[1])}</Bottom>
+      <Bottom>{renderDots(domino[1], true)}</Bottom>
     </Container>
   );
 };
 
 const Container = styled.div`
-  border: 1px solid red;
+  border: 1px solid black;
   color: black;
   background-color: white;
-  border-radius: 5%;
+  border-radius: 20px;
   height: 250px;
   width: 120px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 10px 0;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Dot = styled.div`
@@ -43,9 +43,7 @@ const Top = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  width: 70%;
-  aspect-ratio: 1;
-  justify-self: center;
+  width: 80%;
   gap: 10px;
 `;
 
