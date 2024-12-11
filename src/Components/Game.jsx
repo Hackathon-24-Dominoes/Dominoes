@@ -1,5 +1,7 @@
 // Game.js
 import React, { useState } from 'react';
+import styled from 'styled-components';
+
 import Player from './player';
 import Domino from '../Domino';
 
@@ -69,19 +71,19 @@ const Game = () => {
         <div>
             <h1>Dominoes Game</h1>
             <p>{message}</p>
-            <div className="board">
-                {board.length === 0 ? (
-                    <p>The board is empty, waiting for the first move.</p>
-                ) : (
-                    <div className="board-container">
+
+            <Board>
+                {board.length === 0 
+                ? (<p>The board is empty, waiting for the first move.</p>)
+                : (
+                    <BoardContent>
                         {board.map((domino, index) => (
-                            <div key={index} className="domino-on-board">
-                                <Domino domino={domino} />
-                            </div>
+                            <Domino domino={domino} key={index} />
                         ))}
-                    </div>
+                    </BoardContent>
                 )}
-            </div>
+            </Board>
+
             <Player
                 playerNumber={1}
                 playerDominoes={player1}
@@ -97,5 +99,14 @@ const Game = () => {
         </div>
     );
 };
+
+const Board = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+const BoardContent = styled.div`
+    transform: rotate(90deg);
+`;
 
 export default Game;

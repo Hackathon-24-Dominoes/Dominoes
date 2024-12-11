@@ -6,7 +6,6 @@ const Domino = ({ domino, override_double = false }) => {
 
   useEffect(()=> {
     const [top, bottom] = domino;
-
     if (override_double) setIsDouble(false)
     else setIsDouble(top === bottom);
   }, [domino]);
