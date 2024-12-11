@@ -1,22 +1,3 @@
-// import { useNavigate } from "react-router-dom";
-// import "./LandingPage.css";
-
-// function LandingPage() {
-//   const navigate = useNavigate();
-
-//   const goToStoryPage = () => {
-//     navigate("/story");
-//   };
-
-//   return (
-//     <div className="landing-page" onClick={goToStoryPage}>
-//       {/* No need for an img tag since we're using a background image */}
-//     </div>
-//   );
-// }
-
-// export default LandingPage;
-
 import { useNavigate } from "react-router-dom";
 import "./LandingPage.css";
 

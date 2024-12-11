@@ -11,6 +11,21 @@ function StoryPage() {
 
   return (
     <div className="story-page">
+      <div className="buy-game-box">
+        <img src="/BuyGame.png" alt="Buy Our Game" className="buy-game-image" />
+        <p className="buy-game-text">
+          🎁 <strong>Our physical game is finally here for Christmas!</strong>{" "}
+          🎄 <br />
+          <br />
+          📦{" "}
+          <span>
+            Now available on <strong>Amazon</strong>!
+          </span>{" "}
+          🚀 <br />
+          <br />
+          💀 <em>Get it first before Death does!</em> 😱 <br />
+        </p>
+      </div>
       <Story />
       <button className="game-button" onClick={goToGame}>
         Play Dominoes With Death

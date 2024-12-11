@@ -30,7 +30,7 @@ html {
   top: 0;
   left: 0;
   z-index: 1; /* Background layer */
-  filter: brightness(12%) blur(5px); /* Muted effect: reduce brightness and add blur */
+  filter: brightness(28%) blur(5px); /* Muted effect: reduce brightness and add blur */
 }
 
 /* Styling for the overlay image (Dominoes2.png) */
