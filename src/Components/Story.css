@@ -2,60 +2,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@400;700&display=swap");
 
-/* Reset margins and padding for full control */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Ensure the entire page fills the screen */
-body,
-html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  font-family: "Roboto Serif", serif; /* Elegant serif font for readability */
-  color: white; /* Default text color for readability */
-  overflow: hidden; /* Prevent unintended scrollbars */
-  background-color: #0d0d0d; /* Dark, elegant background color */
-}
 
 /* Full-screen container for the story */
 .story-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Adjust card position lower */
-  width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
+  justify-content: flex-start; 
   text-align: center;
-  padding-top: 50px; /* Push content lower */
-}
-
-/* Elegant title styling */
-.story-container h2 {
-  font-family: "Playfair Display", serif; /* Elegant serif font for the title */
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #f3f9ff; /* Warm gold for elegance */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
-  letter-spacing: 1px; /* Slight spacing for refinement */
-  animation: fadeIn 2s ease-in-out; /* Subtle fade-in animation */
 }
 
 /* Frosted glass effect for the story card */
 .story-card {
   background: rgba(255, 255, 255, 0.1); /* Transparent frosted glass */
   backdrop-filter: blur(12px); /* Subtle and refined blur */
-  border-radius: 20px; /* Softer rounded corners */
-  padding: 30px;
-  width: 60%;
+  border-radius: 20px; 
+  width: 70%;
   max-width: 600px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8); /* Elegant shadow for depth */
   color: #ffffff; /* Ensure text is readable */
-  margin-top: 30px; /* Adjust card position slightly lower */
   transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out; /* Smooth hover transition */
 }
 

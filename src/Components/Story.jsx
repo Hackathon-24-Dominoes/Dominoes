@@ -88,7 +88,6 @@ const Story = () => {
 
   return (
     <div className="story-container">
-      <h2>Your Deadly Story</h2>
       <div className="story-card">
         <p>{story}</p>
       </div>
