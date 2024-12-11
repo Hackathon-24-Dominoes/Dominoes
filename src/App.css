@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -19,7 +19,7 @@
 }
 
 /* ---------------------- Modal Styling ----------------------  */
-.modal-overlay {
+/* .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -72,4 +72,18 @@
 
 .read-the-docs {
   color: #888;
+} */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+h1,
+h2 {
+  color: #333;
+}
+
+button {
+  cursor: pointer;
 }
