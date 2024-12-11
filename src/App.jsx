@@ -6,6 +6,7 @@ import {
 import LandingPage from "./pages/LandingPage";
 import StoryPage from "./pages/StoryPage";
 import Game from "./Components/Game"
+
 import "./App.css";
 
 function App() {
