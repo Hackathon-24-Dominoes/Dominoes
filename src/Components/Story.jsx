@@ -15,30 +15,41 @@ function choose(arr) {
 // Function to generate a random story prompt
 function generateStoryPrompt() {
   const themes = [
-    "Global Diplomacy Prevention",
-    "Quantum Probability Meditation",
-    "Squirrel Communication Training",
-    "Apocalypse Preparedness Drill",
-    "Reverse Psychology Therapy",
-    "Supernatural Summoning Technique",
-    "Interpretive Dance Choreography Inspiration",
-    "Computational Chaos Theory Experiment",
-    "Alien First Contact Protocol",
-    "Retirement Planning through Randomness",
-    "Quantum Entanglement Visualization",
-    "Your Dad thighs",
-    "Time Travel Rehearsal",
-    "Your Mom",
-    "Gangster rapper",
-    "Dog ate my homework",
-    "Raccoon overlords",
+    "the price of immortality",
+    "the haunting of memories",
+    "the shadow in the mirror",
+    "the last broadcast",
+    "the collector of regrets",
+    "voices of the forgotten",
+    "the dark horizon",
+    "the marionette syndrome",
+    "the silence agreement",
+    "the clockmakers curse",
+    "the whispering plague",
+    "the forgotten heirloom",
+    "the endless night",
+    "the ghost writer",
+    "the sins of the machine",
+    "the pact of shadows",
+    "the thunderous dad thighs",
+    "the vanishing year",
+    "the smiling town",
+    "the last dream",
+    "the hunger below",
   ];
-  const subjects = ["The world", "Your family", "Yourself"];
-  return `Ludicrous reason that I should play dominoes involving ${choose(
+  const subjects = [
+    "The world",
+    "Your family",
+    "My self",
+    "Your mom",
+    "Your dad thighs",
+    "My Homework",
+  ];
+  const basePrompt =
+    "3 line ludicrous story that gives me reasons to play dominoes in order to save";
+  return `${basePrompt} ${choose(subjects)} with ${choose(
     themes
-  )} with subject ${choose(
-    subjects
-  )}.3 sentences maximum and in a story format.`;
+  )} as main theme`;
 }
 
 const Story = () => {
