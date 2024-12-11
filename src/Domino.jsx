@@ -1,6 +1,14 @@
 import styled from "styled-components";
+import { useEffect, useState } from 'react';
 
 const Domino = ({ domino }) => {
+  const [isDouble, setIsDouble] = useState(false);
+
+  useEffect(()=> {
+    const [top, bottom] = domino;
+    setIsDouble(top === bottom);
+  }, [domino]);
+
   function renderDots(count, reverse = false) {
     const elements = [];
     for (let i = 0; i < 9; i++) {
@@ -12,7 +20,7 @@ const Domino = ({ domino }) => {
   };
 
   return (
-    <Container>
+    <Container isDouble={isDouble}>
       <Top>{renderDots(domino[0])}</Top>
       <Bottom>{renderDots(domino[1], true)}</Bottom>
     </Container>
@@ -30,6 +38,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transform: rotate(${props => props.isDouble ? `90` : `0`}deg);
 `;
 
 const Dot = styled.div`

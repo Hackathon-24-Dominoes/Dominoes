@@ -1,6 +1,7 @@
 // Game.js
 import React, { useState } from 'react';
 import Player from './player';
+import Domino from '../Domino';
 
 const Game = () => {
     const [currentPlayer, setCurrentPlayer] = useState(1);
@@ -75,7 +76,7 @@ const Game = () => {
                     <div className="board-container">
                         {board.map((domino, index) => (
                             <div key={index} className="domino-on-board">
-                                {domino[0]}|{domino[1]}
+                                <Domino domino={domino} />
                             </div>
                         ))}
                     </div>
