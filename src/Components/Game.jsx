@@ -78,12 +78,16 @@ const Game = () => {
                     <BoardContent>
                         {board.map((domino, index) => (
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <Domino domino={domino} key={index} />
 =======
                             <div key={index} className="domino-on-board">
                                 <Domino domino={domino} />
                             </div>
 >>>>>>> c0e8afb (Adds router for sandbox page, Implements Domino, Adds ability to render doubles sideways)
+=======
+                            <Domino domino={domino} key={index} />
+>>>>>>> 3385a2b (Adds override for doubles, tidies up styling in Game, tidies up player)
                         ))}
                     </BoardContent>
                 )}

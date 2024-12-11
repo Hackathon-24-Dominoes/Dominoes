@@ -22,6 +22,10 @@ const Player = ({ playerNumber, playerDominoes, currentPlayer, placeDomino }) =>
 
 const DominoWrapper = styled.div`
     display: flex;
+<<<<<<< HEAD
+=======
+    // gap: 5px;
+>>>>>>> 3385a2b (Adds override for doubles, tidies up styling in Game, tidies up player)
 `;
 
 export default Player;
