@@ -12,6 +12,56 @@
   align-items: center;
   color: #f5f5f5; /* Soft white for less strain */
   font-family: "Special Elite", "Courier New", monospace; /* Consistent spooky font */
+  position: relative; /* Allow absolute positioning for the buy-game box */
+  overflow: hidden; /* Prevent unintended scrollbars */
+}
+
+/* Styling for the buy-game box */
+.buy-game-box {
+  position: absolute;
+  top: 80px; /* Position near the top */
+  left: 100px; /* Position near the left */
+  background: rgba(0, 0, 0, 0.85); /* Darker background for contrast */
+  /* border: 1px solid #00ff00; Neon green border for fun look */
+  border-radius: 15px; /* Rounded corners */
+  padding: 20px 15px; /* Larger padding for better spacing */
+  display: flex;
+  flex-direction: column; /* Stack text below image */
+  align-items: center;
+  gap: 15px; /* Space between image and text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9); /* Subtle shadow for depth */
+  width: 300px; /* Adjusted width for improved readability */
+  height: auto; /* Automatically adjust height based on content */
+  text-align: center; /* Center align text */
+}
+
+/* Styling for the game image */
+.buy-game-image {
+  width: 250px; /* Adjust size */
+  height: auto;
+  border-radius: 10px; /* Slight rounding for image */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+/* Styling for the buy-game text */
+.buy-game-text {
+  font-family: "Special Elite", "Courier New", monospace; /* Unified spooky font */
+  font-size: 1.1rem; /* Slightly larger font for readability */
+  color: #00ff00; /* Neon green text */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8), 0 0 5px #00ff00; /* Neon effect */
+  line-height: 1.8;
+  text-align: center;
+}
+
+.buy-game-text strong {
+  color: #ffd700; /* Gold for emphasis */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8), 0 0 5px #ffd700; /* Gold neon effect */
+}
+
+.buy-game-text em {
+  font-style: italic;
+  color: #f5f5f5; /* Softer white for emphasis */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 /* Styling for the game button */
