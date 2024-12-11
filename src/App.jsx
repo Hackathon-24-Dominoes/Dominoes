@@ -4,6 +4,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import Modal from "./Components/modal";
 import React from 'react';
 import Game from "./Components/Game";
+import Domino from "./Domino";
 
 const client = new Anthropic({
   apiKey: import.meta.env.VITE_API_KEY,
@@ -76,6 +77,8 @@ function App() {
     <Game></Game>
       <Modal isOpen={isModalOpen} onClose={closeModal} msg={msg} getGreetingStory={getGreetingStory} >
       </Modal>
+
+      <Domino domino={[6,2]}/>
     </>
   );
 }
