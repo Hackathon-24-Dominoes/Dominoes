@@ -2,12 +2,11 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  useNavigate,
 } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import StoryPage from "./pages/StoryPage";
-
 import "./App.css";
-import React from 'react';
 
 function App() {
   return (
@@ -17,7 +16,7 @@ function App() {
         <Route path="/story" element={<StoryPage />} />
       </Routes>
     </Router>
-  )
-};
+  );
+}
 
 export default App;
