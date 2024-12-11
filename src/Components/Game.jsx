@@ -177,5 +177,5 @@ const Game = () => {
 
 //It works now.  An additional modification I'd like to make.  "doubles" refer to a dominoes that has the same number on both sides.  such as 6 and 6 or 3 and 3
 //I want the player with the highest double to get the first turn.  If example, if player 2's highest double is 6 and
-
+//motivation
 export default Game;
