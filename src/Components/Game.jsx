@@ -71,27 +71,19 @@ const Game = () => {
         <div>
             <h1>Dominoes Game</h1>
             <p>{message}</p>
+
             <Board>
-                {board.length === 0 ? (
-                    <p>The board is empty, waiting for the first move.</p>
-                ) : (
+                {board.length === 0 
+                ? (<p>The board is empty, waiting for the first move.</p>)
+                : (
                     <BoardContent>
                         {board.map((domino, index) => (
-<<<<<<< HEAD
-<<<<<<< HEAD
                             <Domino domino={domino} key={index} />
-=======
-                            <div key={index} className="domino-on-board">
-                                <Domino domino={domino} />
-                            </div>
->>>>>>> c0e8afb (Adds router for sandbox page, Implements Domino, Adds ability to render doubles sideways)
-=======
-                            <Domino domino={domino} key={index} />
->>>>>>> 3385a2b (Adds override for doubles, tidies up styling in Game, tidies up player)
                         ))}
                     </BoardContent>
                 )}
             </Board>
+
             <Player
                 playerNumber={1}
                 playerDominoes={player1}
